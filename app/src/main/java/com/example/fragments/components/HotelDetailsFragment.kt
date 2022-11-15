@@ -22,10 +22,9 @@ class HotelDetailsFragment : Fragment(), HotelDetailsView {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentHotelDetailsBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -55,7 +54,5 @@ class HotelDetailsFragment : Fragment(), HotelDetailsView {
                 putLong(EXTRA_HOTEL_ID, id)
             }
         }
-
     }
-
 }
