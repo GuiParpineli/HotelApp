@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Fragments</string>
     <string name="error_hotel_not_found">Hotel not found</string>
+    <string name="action_search">Pesquisar</string>
+    <string name="acton_new_hotel">Novo Hotel</string>
+    <string name="action_info">Info</string>
+    <string name="hint_search">Procurar por Hotel</string>
 </resources>
