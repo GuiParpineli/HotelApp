@@ -28,12 +28,12 @@ class HotelActivity : AppCompatActivity(), HotelListFragment.OnHotelClickListene
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        outState?.putString(EXTRA_SEARCH_TERM, lastSearchTerm)
+        outState.putString(EXTRA_SEARCH_TERM, lastSearchTerm)
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
-        lastSearchTerm = savedInstanceState?.getString(EXTRA_SEARCH_TERM) ?: ""
+        lastSearchTerm = savedInstanceState.getString(EXTRA_SEARCH_TERM) ?: ""
     }
 
     override fun onHotelClick(hotel: Hotel) {
@@ -73,10 +73,6 @@ class HotelActivity : AppCompatActivity(), HotelListFragment.OnHotelClickListene
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return super.onOptionsItemSelected(item)
-    }
-
     private fun showDetailsActivity(hotelId: Long) {
         HotelDetailsActivity.open(this, hotelId)
     }
@@ -89,9 +85,9 @@ class HotelActivity : AppCompatActivity(), HotelListFragment.OnHotelClickListene
         return true
     }
 
-    override fun onMenuItemActionExpand(p0: MenuItem?) = true
+    override fun onMenuItemActionExpand(item: MenuItem): Boolean = true
 
-    override fun onMenuItemActionCollapse(p0: MenuItem?): Boolean {
+    override fun onMenuItemActionCollapse(item: MenuItem): Boolean {
         lastSearchTerm = ""
         listFragment.clearSearch()
         return true
